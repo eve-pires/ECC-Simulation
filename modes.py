@@ -115,7 +115,7 @@ def bsc_k7(p_value):
         v = u
 
 		#channel
-        e = np.where((np.random.randint(2, size = k7)-0.5+p) >= 0.5, 1, 0)
+        e = np.where((np.random.randint(2, size = 7)-0.5+p) >= 0.5, 1, 0)
         r = np.where(v+e >= 1, 1, 0)
 
 		#error
@@ -136,16 +136,19 @@ def main():
     print('>> rate 1/7:')
     for p in probability:
         err_k1.append(bsc_k1(p))
+    print("erro: ", err_k1)
     print('     done!')
     
     print('>> rate 4/7: ')
     for p in probability:
         err_k4.append(bsc_k4(p))
+    print("erro: ", err_k4)
     print('     done!')
 
     print('>> rate 7/7:')
     for p in probability:
         err_k7.append(bsc_k7(p))
+    print("erro: ", err_k7)
     print('     done!')
 
 
